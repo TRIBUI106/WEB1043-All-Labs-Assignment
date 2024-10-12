@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.buttonList {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 0 5px;
+}
+
+.showImg {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.showImg img {
+    width: 20%;
+}

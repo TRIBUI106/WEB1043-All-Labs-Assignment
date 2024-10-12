@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính BMI</title>
+</head>
+<body>
+    <div class="board">
+        <h1>Tính BMI</h1>
+        
+        <span>Nhập cân nặng</span><br>
+        <input type="text" name="" id="canNang" placeholder="Kilogram ( Vd : 70)">
+
+        <br>
+        <span>Nhập chiều cao</span><br>
+        
+        <input type="text" name="" id="chieuCao" placeholder="Xen-ti-mét ( Vd: 175 )"><br>
+        
+        <button onclick="tinhBMI()">Tính</button>
+        <br><br>
+
+        <span style="font-size: 30px;">Chỉ số BMI : <span id="showChiSo">0</span></span><br>
+        <span style="font-size: 30px;">Tình trạng sức khỏe : <span id="showBMI">0</span></span>
+    </div>
+
+    <script>
+        function tinhBMI() {
+            let canNang = document.getElementById("canNang").value;
+            let chieuCao = document.getElementById("chieuCao").value;
+            let chiSo = canNang / ( chieuCao * chieuCao);
+            chiSo = chiSo * 10000;
+
+            if (chiSo < 18.5) {
+                BMI = "Thiếu cân";
+            } else if (chiSo >= 18.5 && chiSo <= 24.99) {
+                BMI = "Bình thường";
+            } else if ( chiSo >= 25 && chiSo <= 29.99) {
+                BMI = "Thừa cân";
+            } else if ( chiSo >= 30 ) {
+                BMI = "Béo phì"
+            }
+
+            document.getElementById("showChiSo").innerHTML = chiSo.toFixed(1);
+            document.getElementById("showBMI").innerHTML = BMI;
+        }
+
+    </script>
+
+    <style>
+
+        input {
+            margin-bottom: 10px;
+        }
+
+
+
+        .board {
+            width: 700px;
+            height: 300px;
+            margin: 60px auto;
+            background-color: blanchedalmond;
+            border-radius: 15px;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</body>
+</html>

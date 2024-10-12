@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>iPhone 9 | 256$</h1><input type="text" id="soLuong" placeholder="Nhập số lượng">
+        <!-- <hr> -->
+        <button onclick="cal()">Ok</button>
+        <div class="show" id="show">
+            
+        </div>
+    </div>
+    <script>
+        let str = ''
+        function cal() {
+            let sl = document.getElementById("soLuong").value;
+            let donGia = 256;
+            let thanhtien = sl*donGia;
+            str += `
+            <h2>iPhone 9</h2>
+            <h2>Thành tiền : ${thanhtien}$</h2>
+            `
+        document.getElementById('show').innerHTML = str;
+        }
+    </script>
+</body>
+</html>

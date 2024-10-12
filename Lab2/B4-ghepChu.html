@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghép Chữ</title>
+</head>
+<body>
+
+    <h1>Danh Sách các phần tử : <span id="theList"></span></h1>
+    <h2>Sau khi xóa phần tử đầu và đuôi : <span id="firstResult"></span></h2>
+    <h2>Sau khi thêm "FIRST" vào đầu : <span id="secondResult"></span></h2>
+    <h2>Sau khi thêm "hello world" vào pos thứ 4 : <span id="thirdResult"></span></h2>
+    <h2>Sau khi thêm "middle" vào pos thứ 3 : <span id="fourthResult"></span></h2>
+    <h2>Sau khi thêm "hello world" vào pos thứ 4 : <span id="fifthResult"></span></h2>
+
+    <script>
+    const theList = ['Lauren', 'Kevin',true,35,null,undefined,['one', 'two']];
+    
+    document.getElementById("theList").innerHTML = theList;
+
+    const firstResult = theList;
+    firstResult.shift();
+    firstResult.pop();
+    document.getElementById("firstResult").innerHTML = firstResult;
+    firstResult.unshift("FIRST");
+    document.getElementById("secondResult").innerHTML = firstResult;
+    firstResult.splice(4,0,"hello world");
+    document.getElementById("thirdResult").innerHTML = firstResult;
+    firstResult.splice(3,0,"middle");
+    document.getElementById("fourthResult").innerHTML = firstResult;
+    firstResult.push("LAST")
+    document.getElementById("fifthResult").innerHTML = firstResult;
+
+
+
+
+    </script>
+</body>
+</html>

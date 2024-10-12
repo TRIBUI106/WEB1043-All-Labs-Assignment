@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Files</title>
+    <style>
+        #fileList {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Files</h1>
+
+    <form>
+        <label for="fileUpload">Choose Files:</label>
+        <input type="file" name="files[]" id="fileUpload" multiple>
+        <br><br>
+        <input type="submit" value="Upload">
+    </form>
+
+    <div id="fileList"></div>
+
+    <script>
+        const fileUpload = document.getElementById('fileUpload');
+        const fileList = document.getElementById('fileList');
+
+        fileUpload.addEventListener('change', function() {
+            fileList.innerHTML = ''; // Xóa danh sách cũ nếu có
+            const files = fileUpload.files;
+            if (files.length > 0) {
+                const ul = document.createElement('ul');
+                for (let i = 0; i < files.length; i++) {
+                    const li = document.createElement('li');
+                    li.textContent = files[i].name;
+                    ul.appendChild(li);
+                }
+                fileList.appendChild(ul);
+            } else {
+                fileList.textContent = "Chưa chọn file nào";
+            }
+        });
+    </script>
+
+</body>
+</html>

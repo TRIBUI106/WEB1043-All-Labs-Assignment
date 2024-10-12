@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+    <link rel="stylesheet" href="/css/bai2.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="firstDiv">
+            <h3>Nhập MSSV</h3>
+            <input type="text" id="studentId" placeholder="TV00042">
+            <h3>Nhập Họ & Tên</h3>
+            <input type="text" id="studentName" placeholder="Bùi Đức Trí">
+            <h3>Nhập Điểm Trung Bình</h3>
+            <input type="text" id="studentPoint" placeholder="10">
+            <br>
+            <button onclick="sv.addData()">Thêm Dữ Liệu</button>
+        </div>
+        <div class="secondDiv">
+            <!-- <div class="miniInfor" id="miniInfor" onclick="sv.hienData(1)"><span id="firstData">[ Trống ]</span><span id="firstDataName" class="dataName"> | </span></div>
+            <div class="miniInfor" id="miniInfor" onclick="sv.hienData(2)"><span id="secondData">[ Trống ]</span><span id="secondDataName" class="dataName"> | </span></div>
+            <div class="miniInfor" id="miniInfor" onclick="sv.hienData(3)"><span id="thirdData">[ Trống ]</span><span id="thirdDataName" class="dataName"> | </span></div>
+            <div class="miniInfor" id="miniInfor" onclick="sv.hienData(4)"><span id="fourthData">[ Trống ]</span><span id="fourthDataName" class="dataName"> | </span></div> -->
+            <div class="miniInfor" id="miniInfor1" onclick="sv.hienData(1)">
+                <span id="firstData">[ Trống ]</span>
+                <span id="firstDataName" class="dataName"> | </span>
+            </div>
+            <div class="miniInfor" id="miniInfor2" onclick="sv.hienData(2)">
+                <span id="secondData">[ Trống ]</span>
+                <span id="secondDataName" class="dataName"> | </span>
+            </div>
+            <div class="miniInfor" id="miniInfor3" onclick="sv.hienData(3)">
+                <span id="thirdData">[ Trống ]</span>
+                <span id="thirdDataName" class="dataName"> | </span>
+            </div>
+            <div class="miniInfor" id="miniInfor4" onclick="sv.hienData(4)">
+                <span id="fourthData">[ Trống ]</span>
+                <span id="fourthDataName" class="dataName"> | </span>
+            </div>
+            
+        </div>
+        <div class="inforBoard" id="inforBoard">
+            <h1>MSSV : <span id="showID"></span></h1>
+            <h1>Họ Tên : <span id="showName"></span></h1>
+            <h1>Điểm : <span id="showScore"></span></h1>
+            <h1>Tình Trạng : <span id="showQuaMon"></span></h1>
+            <button onclick="sv.deleteInfo()">Xóa sinh viên</button>
+        </div>
+        <!-- <div class="secondDiv">
+            <h3>Mã Số Sinh Viên : <span id="showID"></span></h3>
+            <h3>Tên Sinh Viên : <span id="showName"></span></h3>
+            <h3>Học Lực : <span id="showScore"></span></h3>
+        </div> -->
+    </div>
+
+    <script src="/script/lab4-2.js"></script>
+    
+</body>
+</html>

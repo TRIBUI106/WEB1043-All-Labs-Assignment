@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÍNH CẠNH HUYỀN</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <script src="/js/javascript.js"></script>
+
+    <h1 style="text-align: center;">TÍNH CẠNH HUYỀN</h1>
+    <div class="boardCH">
+            <div class="input">
+                <span>Nhập cạnh chiều dài thứ nhất</span><br>
+                <input type="text" name="" id="canh1" placeholder="Cạnh"><br>
+                <span>Nhập cạnh chiều dài thứ hai</span><br>
+                <input type="text" name="" id="canh2" placeholder="Cạnh"><br>
+                <button onclick="tinhCanhHuyen()">Tính</button>
+            </div>
+            <div class="showAnswer" style="margin-left: 30px;">
+                <span id="showCanh1"></span>
+                <span id="showCanh2"></span>
+                <span id="ketQua"></span>
+                <div class="up-arrow"></div>
+            </div>
+    </div>
+
+    <style>
+        .showAnswer {
+            position: relative;
+        }
+        .showAnswer span{
+            position: absolute;
+            font-size: 30px;
+        }
+        .showAnswer span:nth-child(1) {
+            top: 70px;
+            left: 45px;
+        }
+        .showAnswer span:nth-child(2) {
+            top: 70px;
+            left: 205px;
+        }
+        .showAnswer span:nth-child(3) {
+            top: 140px;
+            left: 110px;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+        .up-arrow {
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 100px solid black;
+            margin: 2rem;
+        }
+    </style>
+    
+</body>
+</html>

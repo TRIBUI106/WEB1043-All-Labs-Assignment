@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Mẫu Đất</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <script src="/js/javascript.js"></script>
+    
+    <div class="boardTrans">
+        <h1>Tính Mẫu Đất</h1>
+
+        <div class="twoboard">
+            
+            <div class="inputt">
+                <span style="font-size: 30px;">Nhập số m<sup>2</sup> đất</span><br>
+                <input type="text" placeholder="" id="m2" style="
+                width: 250px; 
+                height: 50px; 
+                font-size: 30px; 
+                padding-left: 10px; 
+                border-radius: 10px;
+                ">
+                <br>
+                <button style="
+                width: 250px; 
+                height: 50px; 
+                font-size: 30px; 
+                padding-left: 10px; 
+                border-radius: 10px; 
+                margin-top: 10px;
+                " onclick="tinhMauDat()">Tính</button>
+            </div>
+
+            <div class="answer">
+                <h3 class="spann"><span id="showMetVuong">0</span>m<sup>2</sup></h3>
+                <h3 class="spann"><span id="showSao">0</span> sào</h3>
+                <h3 class="spann"><span id="showMau">0</span> mẫu</h3>
+                <h3 class="spann"><span id="showHecta">0</span> hecta</h3>
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+</html>

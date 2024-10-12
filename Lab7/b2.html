@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .movingBox {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border: 1px solid black;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="runTheBox()">Chạyyyyy</button>
+
+    <div class="movingBox" id="movingBox">
+    </div>
+
+    <script>
+        let box = document.getElementById('movingBox');
+        let loop;
+
+        function runTheBox() {
+            clearInterval(loop);
+            let x = 0;
+            loop = setInterval(function() {
+                if ( x == 600 ) {
+                    clearInterval(loop);
+                }
+                box.style.left = x + 'px'; 
+                x++;
+                console.log(x)
+            }, 2)
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom HTML5 Video Player</title>
+    <style>
+        #videoPlayer {
+            width: 30%;
+            max-width: 1000px;
+            margin: 20px auto;
+            border: 5px solid #00bfff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        #controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        #controls button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        #controls button:hover {
+            background-color: #333;
+        }
+
+        button:last-child {
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div id="videoPlayer">
+        <video id="video" width="100%" controls>
+            <source src="video.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ chiếu video
+        </video>
+        <div id="controls">
+            <button onclick="playPause()">Play/Pause</button>
+            <button onclick="stopVideo()">Stop</button>
+            <button onclick="replay()">Replay</button>
+            <button onclick="increaseVolume()">Volume (+)</button>
+            <button onclick="decreaseVolume()">Volume (-)</button>
+            <button onclick="muteUnmute()">Mute/Unmute</button>
+            <button disabled>Volume : <span id="thisVolume">100%</span></button>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

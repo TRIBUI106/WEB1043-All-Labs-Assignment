@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+    <script>
+        let cuaSoMoi;
+
+        function openNewWindow() {
+            var width, height;
+            var isIE = /*@cc_on!@*/false || !!document.documentMode;
+            // Special Code : Chỉ chạy được bằng IE ( Internet Browser ) 
+            // /*@cc_on!@*/false: nếu chạy được là true, còn không trả về false
+            // document.documentMode: Kiểm tra thuộc tính documentMode để xác định xem trình duyệt có phải là IE hay không.
+            
+            if (isIE) {
+                // Trình duyệt IE
+                width = 100;
+                height = 100;
+            } else {
+                // Các trình duyệt khác
+                width = 150;
+                height = 150;
+            }
+            
+            cuaSoMoi = window.open("", "cuaSoMoi", `toolbar=yes,menubar=yes,width=${width},height=${height}`);
+        }
+
+        function closeNewWindow() {
+            if (cuaSoMoi) {
+                cuaSoMoi.close();
+            }
+        }
+
+        function checkNewWindow() {
+            if (cuaSoMoi && !cuaSoMoi.closed) {
+                alert("Cửa sổ mới vẫn đang mở.");
+            } else {
+                alert("Cửa sổ mới đã đóng.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="openNewWindow()">Mở cửa sổ mới</button>
+    <button onclick="closeNewWindow()">Đóng cửa sổ mới</button>
+    <button onclick="checkNewWindow()">Kiểm tra xem đã đóng hay chưa</button>
+</body>
+</html>

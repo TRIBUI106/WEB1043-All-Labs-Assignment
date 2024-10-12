@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Bán Hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .xoaSanPham {
+            background-color: red;
+            color: white;
+        }
+        .themSanPham {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h3>DANH MỤC HÀNG HÓA</h3>
+    <table id="product-list">
+        <tr>
+            <td>iPhone9</td>
+            <td>$2700</td>
+            <td><button class="themSanPham" onclick="addToCart('iPhone9', 2700)">Thêm</button></td>
+        <tr>
+        </tr>
+            <td>Samsung Lỏ</td>
+            <td>$1000</td>
+            <td><button class="themSanPham" onclick="addToCart('Samsung', 1000)">Thêm</button></td>
+        <tr>
+        </tr>
+            <td>Xiaomi</td>
+            <td>$2700</td>
+            <td><button class="themSanPham" onclick="addToCart('Xiaomi', 2700)">Thêm</button></td>
+        <tr>
+        </tr>
+            <td>MacOS</td>
+            <td>$2700</td>
+            <td><button class="themSanPham" onclick="addToCart('MacOS', 2700)">Thêm</button></td>
+        <tr>
+        </tr>
+        <!-- Thêm các mặt hàng khác tại đây -->
+    </table>
+    
+    <h3>GIỎ HÀNG CỦA BẠN</h3>
+    <table id="cart">
+        <!-- Các mặt hàng trong giỏ hàng sẽ được thêm vào đây -->
+    </table>
+    
+    <h3>
+        TỔNG SỐ TIỀN: $<span id="total">0</span>
+    </h3>
+
+    <script>
+        let cart = [];
+        let totalAmount = 0;
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+            updateTotal();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+            updateTotal();
+        }
+
+        function updateCart() {
+            const cartTable = document.getElementById('cart');
+            cartTable.innerHTML = ''; // Clear previous contents
+            cart.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>$${item.price}</td>
+                    <td><button class="xoaSanPham" onclick="removeFromCart(${index})">Xóa</button></td>
+                `;
+                cartTable.appendChild(row);
+            });
+        }
+
+        function updateTotal() {
+            totalAmount = cart.reduce((total, item) => total + item.price, 0);
+            document.getElementById('total').textContent = totalAmount;
+        }
+    </script>
+</body>
+</html>
